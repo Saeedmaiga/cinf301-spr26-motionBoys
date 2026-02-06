@@ -35,6 +35,18 @@ body {
     linear-gradient(180deg, #f9fbff 0%, #eef3f5 100%);
 }
 
+a {
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--ocean);
+  outline-offset: 3px;
+  border-radius: 999px;
+}
+
 header {
   background: linear-gradient(120deg, #0b1020 0%, #0f172a 50%, #0c2d35 100%);
   color: #fff;
@@ -63,6 +75,10 @@ header {
   align-items: center;
   gap: 0.5rem;
 }
+
+.site-nav > a:hover {
+  color: var(--mint);
+}
 h1, h2, h3 {
   font-family: "Fraunces", "Times New Roman", serif;
   letter-spacing: 0.01em;
@@ -80,9 +96,29 @@ h1, h2, h3 {
   color: #d6e2ee;
   text-decoration: none;
   font-weight: 500;
+  position: relative;
 }
 
-.site-nav .nav-links a:hover { color: #fff; }
+.site-nav .nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: var(--mint);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.site-nav .nav-links a:hover {
+  color: #fff;
+}
+
+.site-nav .nav-links a:hover::after {
+  transform: scaleX(1);
+}
 
 .page {
   max-width: 1080px;
@@ -102,6 +138,12 @@ h1, h2, h3 {
   margin-top: 1rem;
   background: var(--card);
   box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 46px rgba(15, 23, 42, 0.18);
 }
 
 .hero {
@@ -111,6 +153,19 @@ h1, h2, h3 {
   padding-left: 2rem;
   padding-right: 2rem;
   box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 12% 10% auto auto;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle at 30% 30%, rgba(147, 245, 224, 0.55), transparent 65%);
+  opacity: 0.7;
+  pointer-events: none;
 }
 
 .hero p {
@@ -139,6 +194,12 @@ h1, h2, h3 {
   border-radius: 18px;
   display: block;
   box-shadow: 0 18px 30px rgba(15, 23, 42, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#gallery .gallery-item img:hover {
+  transform: scale(1.01);
+  box-shadow: 0 26px 44px rgba(15, 23, 42, 0.22);
 }
 
 #gallery .gallery-item figcaption {
@@ -209,6 +270,14 @@ footer {
   text-align: center;
   padding: 1rem;
   color: var(--slate);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }
 
 @media (max-width: 640px) {
