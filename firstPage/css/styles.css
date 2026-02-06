@@ -1,3 +1,9 @@
+/* FONTAWESOME1 */
+/* Icon: fa-leaf (hero paragraph) */
+
+/* FONTAWESOME2 */
+/* Icon: fa-compass (navigation brand) */
+
 /* GOOGLEFONT1 */
 /* Headings: Merriweather */
 
@@ -67,6 +73,24 @@ article, aside {
   padding: 0.9rem 1rem;
   margin-top: 0.75rem;
   background: #ffffff;
+}
+
+#gallery figure {
+  margin: 1.5rem 0;
+}
+
+#gallery img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+#gallery figcaption {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #64748b;
 }
 
 footer {
