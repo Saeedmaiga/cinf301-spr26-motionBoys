@@ -24,13 +24,13 @@
 
   <body>
     <header>
-      <nav aria-label="Primary">
+      <nav class="site-nav" aria-label="Primary">
         <a href="#home">
             <i class="fa-solid fa-compass" aria-hidden="true"></i>
             Wild Trails
           </a>
           
-        <ul>
+        <ul class="nav-links">
           <li><a href="#highlights">Highlights</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#facts">Facts</a></li>
@@ -38,8 +38,8 @@
       </nav>
     </header>
 
-    <main id="home">
-      <section aria-labelledby="hero-title">
+    <main id="home" class="page">
+      <section class="hero" aria-labelledby="hero-title">
         <h1 id="hero-title">Explore the Wild</h1>
         <p>
             <i class="fa-solid fa-leaf" aria-hidden="true"></i>
@@ -48,39 +48,39 @@
           
       </section>
 
-      <section id="highlights" aria-labelledby="highlights-title">
+      <section id="highlights" class="content-section highlights" aria-labelledby="highlights-title">
         <h2 id="highlights-title">Highlights</h2>
 
-        <article>
+        <article class="card highlight-card">
           <h3>Habitats</h3>
           <p>Forests, wetlands, and mountains shape how animals live and travel.</p>
         </article>
 
-        <article>
+        <article class="card highlight-card">
           <h3>Respect Nature</h3>
           <p>Stay on trails, keep distance, and leave no trace.</p>
         </article>
 
-        <aside aria-label="Tip">
+        <aside class="card tip-card" aria-label="Tip">
           <p><strong>Tip:</strong> Early mornings are best for wildlife spotting.</p>
         </aside>
       </section>
 
-      <section id="gallery" aria-labelledby="gallery-title">
+      <section id="gallery" class="content-section gallery" aria-labelledby="gallery-title">
         <h2 id="gallery-title">Gallery</h2>
-        <figure>
+        <figure class="gallery-item">
           <img src="images/lion.jpg" alt="A majestic lion in the wild" width="800" height="533" loading="lazy" />
           <figcaption>Lion — King of the savanna</figcaption>
         </figure>
-        <figure>
+        <figure class="gallery-item">
           <img src="images/elephant.jpg" alt="An African elephant in its natural habitat" width="800" height="533" loading="lazy" />
           <figcaption>African elephant — Gentle giant of the plains</figcaption>
         </figure>
       </section>
 
-      <section id="facts" aria-labelledby="facts-title">
+      <section id="facts" class="content-section facts" aria-labelledby="facts-title">
         <h2 id="facts-title">Facts</h2>
-        <article>
+        <article class="card fact-notes">
           <h3>Quick notes</h3>
           <ul>
             <li>Many birds navigate using Earth’s magnetic field.</li>
@@ -88,6 +88,38 @@
             <li>Some animals communicate using scent trails.</li>
           </ul>
         </article>
+        <table id="facts-table" class="facts-table">
+          <caption>Wildlife snapshot</caption>
+          <thead>
+            <tr>
+              <th scope="col">Species</th>
+              <th scope="col">Habitat</th>
+              <th scope="col">Notable trait</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Snow leopard</td>
+              <td>Mountains</td>
+              <td>Powerful climber</td>
+            </tr>
+            <tr>
+              <td>Sea turtle</td>
+              <td>Oceans</td>
+              <td>Long-distance navigator</td>
+            </tr>
+            <tr>
+              <td>Red fox</td>
+              <td>Forests</td>
+              <td>Adaptable hunter</td>
+            </tr>
+            <tr>
+              <td>Great horned owl</td>
+              <td>Woodlands</td>
+              <td>Silent flight</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </main>
 
